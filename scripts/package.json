@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "strip-json-comments": "^4.0.0",
+    "xml-js": "^1.6.11"
+  }
+}
