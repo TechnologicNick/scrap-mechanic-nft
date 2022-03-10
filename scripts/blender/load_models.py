@@ -56,14 +56,25 @@ def load_model(model):
         mesh.scale = mathutils.Vector((1.0, 1.0, 1.0))
     
     # Apply materials
-    if model['subMeshMap']:
+    if 'subMeshMap' in model:
         for matName in model['subMeshMap']:
             apply_material(bpy.data.materials[matName], model['subMeshMap'][matName])
     else:
-        for modelMat in model['subMeshList']:
-            apply_material(bpy.data.materials.values()[0], modelMat)
+        for index, modelMat in enumerate(model['subMeshList']):
+            apply_material(bpy.data.materials.values()[index], modelMat)
         
-
+        
+        
+def export(rend):
+    out = os.path.join(base_path, 'out')
+    if not os.path.exists(out):
+        os.makedirs(out)
+        
+    bpy.ops.export_scene.gltf(
+        filepath=os.path.join(out, os.path.splitext(os.path.basename(rend))[0] + '.glb'),
+        check_existing=False,
+        export_format='GLB',
+    )
 
 
 
@@ -73,5 +84,6 @@ with open(os.path.join(base_path, '../assets/models.json')) as f:
     
 for rend, model in models.items():
     load_model(model)
+    export(rend)
     break
         
