@@ -33,11 +33,10 @@ const Collection = () => {
     return (<>
         <Container>
             <Row justify="center" align="center">
-                <Text h1>ScrapPunks</Text>
+                <Text h1>ScrapPunks <MdVerified size={36} color="var(--nextui-colors-warning)" /></Text>
             </Row>
             <Row justify="center" align="center">
-                <Text h5 color="$gray400">Created by <Text as="span" color="warning">The Trader</Text></Text>
-                <MdVerified color="var(--nextui-colors-warning)" style={{ marginLeft: "0.5ch" }}/>
+                <Text h5 color="$gray400">Created by <Text as="span" color="warning">The Trader <MdVerified /></Text></Text>
             </Row>
             <Spacer y={1} />
             <Row justify="center" align="center">
