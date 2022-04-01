@@ -6,9 +6,7 @@ import images from "../resources/images.json";
 import { imagesPerPage } from "../settings";
 
 const nfts = images.map(img => new Nft(img))
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+    .sort((a, b) => b.price - a.price)
 
 const Collection = () => {
     const [page, setPage] = useState(0);

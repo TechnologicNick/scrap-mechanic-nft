@@ -1,4 +1,5 @@
 import { Card, Text, Row, Button, Col } from "@nextui-org/react";
+import { FaEthereum } from "react-icons/fa";
 import Nft from "../models/nft";
 import { imagePath } from "../settings";
 
@@ -45,13 +46,14 @@ const Display = ({ nft }: { nft: Nft }) => {
                     <Col>
                         <Row justify="flex-end">
                             <Button flat auto rounded color="secondary">
+                                <FaEthereum size={14}/>
                                 <Text
                                     css={{ color: "inherit" }}
-                                    size={12}
+                                    size={14}
                                     weight="bold"
                                     transform="uppercase"
                                 >
-                                    Buy
+                                    {nft.price.toFixed(3)}
                                 </Text>
                             </Button>
                         </Row>
