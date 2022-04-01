@@ -119,11 +119,11 @@ If (StrCompare(A_Args[1], "preload") == 0) {
     ; Face
     ClickCategory(0)
     ClickPalette(A_Args[2])
-    ClickGarment(A_Args[3])
+    ClickGarment(A_Args[4])
 
     ; Hair
     ClickCategory(1)
-    ClickPalette(A_Args[4])
+    ClickPalette(A_Args[3])
     ClickGarment(A_Args[5])
 
     ; Facial Hair
