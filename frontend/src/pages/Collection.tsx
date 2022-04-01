@@ -62,7 +62,7 @@ const Collection = () => {
                 <Text>
                     Ever wondered what happened to all those caged farmers you sold for seeds? Turns out the
                     Trader has between collecting them in his barn. After almost two years of collecting, the
-                    Trader is has turned them into NFTs!
+                    Trader has turned them into NFTs!
                 </Text>
             </Container>
             <Spacer y={3} />
