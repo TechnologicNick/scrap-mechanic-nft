@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavContainer>
             <Container display={"flex"} alignItems={"center"} justify={"space-between"}>
                 <Text h1 size={30} weight={"bold"} css={{ m: 0 }}>
-                    Scrap Mechanic NFTs
+                    OpenBarn
                 </Text>
                 <ToggleDarkMode />
             </Container>
