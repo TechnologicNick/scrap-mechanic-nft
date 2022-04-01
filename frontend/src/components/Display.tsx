@@ -1,4 +1,4 @@
-import { Card } from "@nextui-org/react";
+import { Card, Text, Row, Button, Col } from "@nextui-org/react";
 import Nft from "../models/nft";
 import { imagePath } from "../settings";
 
@@ -24,14 +24,39 @@ const Display = ({ nft }: { nft: Nft }) => {
                 />
             </Card.Body>
             <Card.Footer
+                blur
                 css={{
-                    position: "relative",
-                    bgColor: "#ffbe67",
+                    position: "absolute",
+                    bgBlur: "#ffffff",
                     borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+                    bottom: 0,
                     zIndex: 1,
                 }}
-            >
-                {nft.combination.join()}
+                >
+                <Row>
+                    <Col>
+                        <Text color="black" size={12}>
+                            ScrapPunks
+                        </Text>
+                        <Text color="black" size={16} b>
+                            {nft.id}
+                        </Text>
+                    </Col>
+                    <Col>
+                        <Row justify="flex-end">
+                            <Button flat auto rounded color="secondary">
+                                <Text
+                                    css={{ color: "inherit" }}
+                                    size={12}
+                                    weight="bold"
+                                    transform="uppercase"
+                                >
+                                    Buy
+                                </Text>
+                            </Button>
+                        </Row>
+                    </Col>
+                </Row>
             </Card.Footer>
         </Card>
     )
