@@ -1,4 +1,4 @@
-import { Card, Col, Text } from "@nextui-org/react";
+import { Card } from "@nextui-org/react";
 import Nft from "../models/nft";
 import { imagePath } from "../settings";
 
@@ -17,6 +17,9 @@ const Display = ({ nft }: { nft: Nft }) => {
                     containerCss={{
                         borderBottomLeftRadius: 0,
                         borderBottomRightRadius: 0,
+                    }}
+                    css={{
+                        aspectRatio: 960 / 1070,
                     }}
                 />
             </Card.Body>
