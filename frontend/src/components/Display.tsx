@@ -1,7 +1,44 @@
-import { Card, Text, Row, Button, Col } from "@nextui-org/react";
-import { FaEthereum } from "react-icons/fa";
+import { Card, Text, Row, Button, Col, Tooltip } from "@nextui-org/react";
+import { FaEthereum, FaDollarSign } from "react-icons/fa";
 import Nft from "../models/nft";
 import { imagePath } from "../settings";
+
+const PriceTooltip = ({ eth }: { eth: number }) => {
+
+    let ethStr = eth.toPrecision(4);
+    let usd = eth * 3456.78;
+    let usdStr = usd.toLocaleString("en-US", {
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2,
+    });
+
+    return (
+        <Col>
+            <Row justify="center" align="center">
+                <FaEthereum size={14}/>
+                <Text
+                    css={{ color: "inherit" }}
+                    size={14}
+                    weight="bold"
+                    transform="uppercase"
+                >
+                    {ethStr} ETH
+                </Text>
+            </Row>
+            <Row justify="center" align="center">
+                <FaDollarSign size={14} />
+                <Text
+                    css={{ color: "inherit" }}
+                    size={14}
+                    weight="bold"
+                    transform="uppercase"
+                >
+                    {usdStr} USD
+                </Text>
+            </Row>
+        </Col>
+    )
+}
 
 const Display = ({ nft }: { nft: Nft }) => {
     return (
@@ -45,17 +82,22 @@ const Display = ({ nft }: { nft: Nft }) => {
                     </Col>
                     <Col>
                         <Row justify="flex-end">
-                            <Button flat auto rounded color="secondary">
-                                <FaEthereum size={14}/>
-                                <Text
-                                    css={{ color: "inherit" }}
-                                    size={14}
-                                    weight="bold"
-                                    transform="uppercase"
-                                >
-                                    {nft.price.toFixed(3)}
-                                </Text>
-                            </Button>
+                            <Tooltip
+                                content={<PriceTooltip eth={nft.price} />}
+                                contentColor="warning"
+                            >
+                                <Button flat auto rounded color="warning">
+                                    <FaEthereum size={14}/>
+                                    <Text
+                                        css={{ color: "inherit" }}
+                                        size={14}
+                                        weight="bold"
+                                        transform="uppercase"
+                                    >
+                                        {nft.price.toPrecision(4)}
+                                    </Text>
+                                </Button>
+                            </Tooltip>
                         </Row>
                     </Col>
                 </Row>
