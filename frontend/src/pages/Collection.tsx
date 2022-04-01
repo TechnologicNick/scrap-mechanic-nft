@@ -70,13 +70,16 @@ const Collection = () => {
         </Container>
         <Container fluid>
             <DisplayGrid nfts={nfts.slice(page * imagesPerPage, (page + 1) * imagesPerPage)} />
+            <Spacer y={1} />
             <Row justify="center" align="center">
                 <Pagination
+                    color="warning"
                     page={page + 1}
                     total={Math.ceil(nfts.length / imagesPerPage)}
                     onChange={page => setPage(page - 1)}
                 />
             </Row>
+            <Spacer y={5} />
         </Container>
     </>)
 }
