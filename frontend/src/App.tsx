@@ -1,6 +1,7 @@
 import { createTheme, NextUIProvider } from "@nextui-org/react"
 import useDarkMode from "use-dark-mode";
 import Navbar from "./components/Navbar";
+import Collection from "./pages/Collection";
 
 const lightTheme = createTheme({
 	type: "light",
@@ -26,6 +27,7 @@ const App = () => {
 	return (
 		<NextUIProvider theme={darkMode.value ? darkTheme : lightTheme}>
 			<Navbar />
+			<Collection />
 		</NextUIProvider>
 	)
 }
