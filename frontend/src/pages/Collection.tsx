@@ -36,7 +36,7 @@ const Collection = () => {
                 <Text h1>ScrapPunks</Text>
             </Row>
             <Row justify="center" align="center">
-                <Text h5 color="$gray400">Created by <Text as="span" color="warning">The Farmer</Text></Text>
+                <Text h5 color="$gray400">Created by <Text as="span" color="warning">The Trader</Text></Text>
                 <MdVerified color="var(--nextui-colors-warning)" style={{ marginLeft: "0.5ch" }}/>
             </Row>
             <Spacer y={1} />
@@ -58,6 +58,15 @@ const Collection = () => {
                     )} subtitle="volume traded" />
                 </Button.Group>
             </Row>
+            <Spacer y={1} />
+            <Container xs css={{ textAlign: "center" }}>
+                <Text>
+                    Ever wondered what happened to all those caged farmers you sold for seeds? Turns out the
+                    Trader has between collecting them in his barn. After almost two years of collecting, the
+                    Trader is has turned them into NFTs!
+                </Text>
+            </Container>
+            <Spacer y={3} />
         </Container>
         <Container fluid>
             <DisplayGrid nfts={nfts.slice(page * imagesPerPage, (page + 1) * imagesPerPage)} />
